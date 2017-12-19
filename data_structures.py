@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 class Stack:
     def __init__(self, data=[]):
         self.data = data
@@ -13,12 +11,12 @@ class Stack:
     def pop(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data.pop())
+        return self.data.pop()
 
     def peek(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data[-1])
+        return self.data[-1]
 
     def size(self):
         return len(self.data)
@@ -36,12 +34,12 @@ class Queue:
     def poll(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data.pop(0))
+        return self.data.pop(0)
 
     def peek(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data[0])
+        return self.data[0]
 
     def size(self):
         return len(self.data)   
@@ -59,7 +57,7 @@ class Deque:
     def pop(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data.pop())
+        return self.data.pop()
 
     def offer(self, item):
         self.data.append(item)
@@ -67,17 +65,17 @@ class Deque:
     def poll(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data.pop(0))
+        return self.data.pop(0)
 
     def peek_first(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data[0])
+        return self.data[0]
 
     def peek_last(self):
         if len(self.data) == 0:
             return None
-        return deepcopy(self.data[-1])
+        return self.data[-1]
 
     def size(self):
         return len(self.data)
